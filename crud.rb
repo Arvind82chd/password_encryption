@@ -24,7 +24,17 @@ def create_secure_users(list_of_users)
   list_of_users
 end
 
-new_password = create_hash_digest("password1")
-puts new_password == "password3"
 
-puts create_secure_users(users)
+create_secure_users(users)
+
+def authenticate_user(username, password, list_of_users)
+  list_of_users.each do |user_record|
+    if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password
+      puts "username and password matched"
+      return user_record
+    end
+  end
+  "Wrong credentials"
+end
+
+puts authenticate_user('d', '000', users)

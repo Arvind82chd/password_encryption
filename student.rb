@@ -24,6 +24,6 @@ student2 = Student.new("Chaman", "Basantpuria", "chaman", "c@abc.com", "pwd2")
 puts student1
 puts student2
 
-hashed_password = student1.Crud.create_hash_digest(student1.password)
+hashed_password = student1.create_hash_digest(student1.password)
 
 puts hashed_password
